@@ -19,3 +19,14 @@ grant all on all schemas in database AIRBNB to role transform;
 grant all on future schemas in database AIRBNB to role transform;
 grant all on all tables in schema AIRBNB.RAW to role transform;
 grant all on future tables in schema AIRBNB.RAW to role transform;
+
+show roles;
+
+select *  from raw.src_hosts where host_name is null;
+
+
+update airbnb.raw.raw_listings
+set minimum_nights = 30, updated_at = current_timestamp()
+where id=3176;
+
+select * from airbnb.raw.scd_raw_listings where id=3176;
