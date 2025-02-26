@@ -35,3 +35,6 @@ models:
     src:
       +materialized: view
       snowflake_warehouse: compute_wh
+    dim:
+      +materialized: table
+      snowflake_warehouse: compute_wh
