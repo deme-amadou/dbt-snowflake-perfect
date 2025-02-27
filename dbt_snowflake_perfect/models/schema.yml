@@ -9,7 +9,7 @@ models:
           - unique
           - not_null
       - name: host_id
-        description: "The unique identifier for the host"
+        description: "The unique identifier for the host. References the dim_hosts_cleansed table"
         tests:
           - not_null
           - relationships:
@@ -24,5 +24,13 @@ models:
                         'Shared room',
                         'Hotel room']
       - name: minimum_nights
+        description: '{{ doc("dim_listing_cleansed_minimum_nights")}}'
         tests:
           - positive_value
+  - name: dim_hosts_cleansed
+    description: "This table contains information about the hosts"
+    columns:
+      - name: host_name
+        description: "The name of the host"
+        tests:
+          - not_null
