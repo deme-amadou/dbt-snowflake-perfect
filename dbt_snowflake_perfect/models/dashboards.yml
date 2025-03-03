@@ -1,0 +1,17 @@
+version: 2
+
+exposures:
+  - name: dashboard_exposure
+    type: dashboard
+    maturity: low
+    url: https://8e22d038.us2a.app.preset.io/superset/dashboard/8/?native_filters_key=Kj5xC3wplJLZuO9d08r4SQ7lb8ZhkkTABzOUg2rCWGGb__p_meT8P5KRvVTTS77J
+    description: This exposure is used to expose the dashboard model to the BI team.
+
+
+    depends_on:
+      - ref('dim_listings_w_hosts')
+      - ref('mart_fullmoon_reviews')
+    
+    owner: 
+      name: Amadou
+      email: demepoulo@gmail.com
