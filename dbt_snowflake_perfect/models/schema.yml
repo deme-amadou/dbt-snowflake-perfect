@@ -27,6 +27,10 @@ models:
         description: '{{ doc("dim_listing_cleansed_minimum_nights")}}'
         tests:
           - positive_value
+  - name: dim_listings_w_hosts
+    tests:
+      - dbt_expectations.expect_table_row_count_to_equal_other_table:
+          compare_model: source('airbnb', 'listings')
   - name: dim_hosts_cleansed
     description: "This table contains information about the hosts"
     columns:
