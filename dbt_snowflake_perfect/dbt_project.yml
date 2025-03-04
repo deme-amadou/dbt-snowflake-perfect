@@ -41,3 +41,6 @@ models:
     dim:
       +materialized: table
       snowflake_warehouse: compute_wh
+
+vars: 
+  username: defaultvar
