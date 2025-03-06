@@ -6,6 +6,7 @@
     )
 }}
 
+
 WITH src_reviews AS (
     select 
         * 
